@@ -1,15 +1,19 @@
-public class RLVariables  {
+ class RLVariables  {
       // Declare local variable here
-      int mySecretNumber = 10;
+      private int mySecretNumber = 10;
        
-      public void displaySecret(){
-        // write your code here
-        this.mySecretNumber =45 ;
+      public int displaySecret(){
+        return this.mySecretNumber =45;
     }
 
-    public static void main(){
+    public static void main(String[] args){
         RLVariables notSoPrivate = new RLVariables();
-        notSoPrivate.displaySecret();
+        RLVariables secret = new RLVariables();
+        System.out.println(" Reference variable accessing instance variable: "+secret.mySecretNumber);
+    
+        System.out.println("Local Variable "+notSoPrivate.displaySecret()); 
+
+        System.out.println(" Reference variable accessing instance variable that points to the local variable: "+secret.displaySecret());
     }
     
 }
